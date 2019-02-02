@@ -11,7 +11,7 @@ public class sortHoar {
         System.out.println("Sort array /QuickSort method Hoare split/= " + Arrays.toString(sortArray));
     }
 
-    // алгоритм быстрой сортировки
+    // quick sort algorithm
     public static int[] quickSort(int[] elements, int left, int right) {
         if (left < right) {
             int part = partition(elements, left, right);
@@ -21,9 +21,9 @@ public class sortHoar {
         return elements;
     }
 
-    // разделяем последовательность на элементы большие и меньшие pivot
-    // *выбор опорного элемента методом Хоара
-    public static int partition(int[] elements, int left, int right) {
+    // we divide the sequence into elements larger and smaller pivot
+    // * selection of the support element by the Choar method
+    private static int partition(int[] elements, int left, int right) {
         int pivot = elements[left];
         int i = left - 1;
         int j = right + 1;
@@ -39,8 +39,8 @@ public class sortHoar {
         }
     }
 
-    // меняем местами элементы array[i] и array[j]
-    public static void swap(int[] array, int i, int j) {
+    // swap the elements of array [i] and array [j]
+    private static void swap(int[] array, int i, int j) {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;

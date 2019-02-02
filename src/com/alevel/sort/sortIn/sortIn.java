@@ -9,7 +9,7 @@ public class sortIn {
         System.out.println("Sort array /InsertionSort method/= " + Arrays.toString(insertionSort(array)));
     }
 
-    public static int[] insertionSort(int[] elements) {
+    private static int[] insertionSort(int[] elements) {
         for (int i = 1; i < elements.length; i++) {
             int key = elements[i];
             int j = i - 1;

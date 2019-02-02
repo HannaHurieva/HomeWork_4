@@ -15,37 +15,37 @@ public class sortMerge {
         System.out.print(array[n-1]+ "]");
     }
     public static void mergeSort(int[] elements, int low, int high) {
-        if (low < high) { // хотя бы два элемента
+        if (low < high) { // at least two elements
             int mid = (low + high) / 2;
-            mergeSort(elements, low, mid); // рекурсия левой части массива
-            mergeSort(elements, mid + 1, high); // рекурсия правой части массива
-            merge(elements, low, mid, high); // соединяем отсортированные половинки массива
+            mergeSort(elements, low, mid); // recursion of the left part of the array
+            mergeSort(elements, mid + 1, high); // recursion of the right side of the array
+            merge(elements, low, mid, high); // connect the sorted halves of the array
         }
     }
 
-    // метод сортировки слиянием
+    // merge sort method
     private static void merge(int[] inputArray, int low, int mid, int high) {
-        // длина нового массива
+        // new array length
         int n = high-low+1;
         int[] arraySort = new int[n];
-        // индексы левой части, правой части, объединенного массива
+        // indices of the left part, the right part, the combined array
         int i = low, j = mid + 1;
         int k = 0;
 
         while (i <= mid || j <= high) {
             if (i > mid) {
-                // закончилась левая часть, записываем правую часть в объединенный массив
+                // the left side is over, we write the right side into the combined array
                 arraySort[k] = inputArray[j];
                 j++;
                 k++;
             }
             else if (j > high) {
-                // закончилась правая часть, записываем левую часть в объединенный массив
+                // the right side is over, we write the left side in the combined array
                 arraySort[k] = inputArray[i];
                 i++;
                 k++;
             }
-            // определяем меньший элемент - сортировка по возрастанию
+            // we define a smaller element - sorting ascending
             else if (inputArray[i] < inputArray[j]) {
                 arraySort[k] = inputArray[i];
                 i++;
