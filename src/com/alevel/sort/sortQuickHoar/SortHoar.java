@@ -2,7 +2,7 @@ package com.alevel.sort.sortQuickHoar;
 
 import java.util.Arrays;
 
-public class sortHoar {
+public class SortHoar {
     public static void main(String[] args) {
         int[] array = {5, 7, 1, 6, 10, 3, 2, 9, 8, 4};
         System.out.println("Data array = " + Arrays.toString(array));

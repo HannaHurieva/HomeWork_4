@@ -2,18 +2,19 @@ package com.alevel.sort.sortMerge;
 
 import java.util.Arrays;
 
-public class sortMerge {
+public class SortMerge {
     public static void main(String[] args) {
         int[] array = {5, 7, 1, 6, 10, 3, 2, 9, 8, 4};
         System.out.println("Data array = " + Arrays.toString(array));
         int n = array.length;
-        mergeSort(array,0,n-1);
+        mergeSort(array, 0, n - 1);
         System.out.print("Sort array /MergeSort method/= [");
-        for (int k = 0; k < n-1; k++) {
+        for (int k = 0; k < n - 1; k++) {
             System.out.print(array[k] + ", ");
         }
-        System.out.print(array[n-1]+ "]");
+        System.out.print(array[n - 1] + "]");
     }
+
     public static void mergeSort(int[] elements, int low, int high) {
         if (low < high) { // at least two elements
             int mid = (low + high) / 2;
@@ -26,7 +27,7 @@ public class sortMerge {
     // merge sort method
     private static void merge(int[] inputArray, int low, int mid, int high) {
         // new array length
-        int n = high-low+1;
+        int n = high - low + 1;
         int[] arraySort = new int[n];
         // indices of the left part, the right part, the combined array
         int i = low, j = mid + 1;
@@ -35,26 +36,16 @@ public class sortMerge {
         while (i <= mid || j <= high) {
             if (i > mid) {
                 // the left side is over, we write the right side into the combined array
-                arraySort[k] = inputArray[j];
-                j++;
-                k++;
-            }
-            else if (j > high) {
+                arraySort[k++] = inputArray[j++];
+            } else if (j > high) {
                 // the right side is over, we write the left side in the combined array
-                arraySort[k] = inputArray[i];
-                i++;
-                k++;
+                arraySort[k++] = inputArray[i++];
             }
             // we define a smaller element - sorting ascending
             else if (inputArray[i] < inputArray[j]) {
-                arraySort[k] = inputArray[i];
-                i++;
-                k++;
-            }
-            else {
-                arraySort[k] = inputArray[j];
-                j++;
-                k++;
+                arraySort[k++] = inputArray[i++];
+            } else {
+                arraySort[k++] = inputArray[j++];
             }
         }
         for (i = 0; i < n; i++)

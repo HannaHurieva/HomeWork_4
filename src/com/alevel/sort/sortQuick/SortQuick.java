@@ -2,7 +2,7 @@ package com.alevel.sort.sortQuick;
 
 import java.util.Arrays;
 
-public class sortQuick {
+public class SortQuick {
     public static void main(String[] args) {
         int[] array = {5, 7, 1, 6, 10, 3, 2, 9, 8, 4};
         System.out.println("Data array = " + Arrays.toString(array));
